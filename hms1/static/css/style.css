@@ -1,0 +1,27 @@
+.fm {
+  height: 50px !important;
+  border: 0px;
+  border-bottom: 2px dotted black;
+  border-radius: 0px;
+  margin: 10px;
+}
+.gd {
+  width: 300px;
+}
+.gdd {
+  margin: 10px;
+}
+.all {
+  background-color: #f2f7f8 !important;
+  width: 600px;
+  padding: 60px;
+}
+.all h1 {
+  text-align: center;
+}
+.bt {
+  text-align: center;
+}
+body {
+  background-color: #f2f7f8;
+}

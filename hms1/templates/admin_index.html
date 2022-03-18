@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+  <head>
+    <link rel="stylesheet" href="{%static 'css/bootstrap.css'%}" />
+    <link rel="stylesheet" href="{%static 'css/style.css'%}" />
+
+    <link
+      href="{%static 'assets/plugins/chartist/dist/chartist.min.css'%}"
+      rel="stylesheet"
+    />
+    <link href="{%static 'css/style.min.css'%}" rel="stylesheet" />
+  </head>
+  <body style="background-image: linear-gradient(to right, #017dbf, #01bdda)">
+    <div
+      style="display: flex; justify-content: center; align-items: center"
+      class="container align-items-center"
+    >
+      <div style="background-color: #f2f7f8" class="all">
+        <h1>Sign Up</h1>
+        <form
+          action="/api/admin"
+          method="post"
+          class="form-horizontal form-material mx-2"
+        >
+          {% csrf_token %}{% for errors in error %}
+          <div
+            class="alert alert-warning alert-dismissible fade show"
+            role="alert"
+          >
+            <strong>Warning!</strong> {{errors}}
+          </div>
+          {% endfor %}
+          <div class="form-group">
+            <label class="col-md-12 mb-0">First Name</label>
+            <div class="col-md-12">
+              <input
+                type="text"
+                name="fname"
+                class="form-control ps-0 form-control-line"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-12 mb-0">Last Name</label>
+            <div class="col-md-12">
+              <input
+                type="text"
+                name="lname"
+                class="form-control ps-0 form-control-line"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="example-email" class="col-md-12">Email</label>
+            <div class="col-md-12">
+              <input
+                type="email"
+                class="form-control ps-0 form-control-line"
+                name="email"
+                id="example-email"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-12 mb-0">Hall ID</label>
+            <div class="col-md-12">
+              <input
+                type="text"
+                name="hallid"
+                class="form-control ps-0 form-control-line"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-12 mb-0">Password</label>
+            <div class="col-md-12">
+              <input
+                type="password"
+                name="pass1"
+                class="form-control ps-0 form-control-line"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-12 mb-0">Re-Type Password</label>
+            <div class="col-md-12">
+              <input
+                type="password"
+                name="pass2"
+                class="form-control ps-0 form-control-line"
+                required
+              />
+            </div>
+          </div>
+          <p class="gd"><b>Gender</b></p>
+          <div class="form-check">
+            <input
+              value="male"
+              class="form-check-input"
+              type="radio"
+              name="gd"
+              id="flexRadioDefault1"
+            />
+            <label class="form-check-label" for="flexRadioDefault1">
+              Male
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              value="female"
+              class="form-check-input"
+              type="radio"
+              name="gd"
+              id="flexRadioDefault2"
+            />
+            <label class="form-check-label" for="flexRadioDefault2">
+              Female
+            </label>
+          </div>
+          <center>
+            <div class="form-group">
+              <div class="col-sm-12">
+                <button
+                  type="submit"
+                  class="btn btn-info mx-auto mx-md-0 text-white"
+                >
+                  Submit
+                </button>
+              </div>
+              <center>
+                <br /><a href="/login/admin">I have an Account !</a>
+              </center>
+            </div>
+          </center>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

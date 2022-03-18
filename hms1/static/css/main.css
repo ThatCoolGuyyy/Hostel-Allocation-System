@@ -1,0 +1,111 @@
+.contain{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    padding-bottom: 100px;
+    height: 100vh;
+    padding: 10px 20px;
+}
+.bx{
+    display: flex;
+    width: 100%;
+    height: 60px;
+    overflow: hidden;
+}
+.inpp{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: 0px;
+    margin-right: 10px;
+    font-size: larger;
+    padding: 3px 15px;
+    resize: none;
+    border-radius: 7px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.inpp:focus{
+    outline: none;
+}
+.chtsec{
+    font-size: x-large;
+    font-weight: 400;
+    color: #009efb;
+}
+.btnn{
+    width: 100px;
+    height: 100%;
+    outline: none;
+    border-radius: 7px;
+    background-color: rgb(199, 232, 253);
+    outline: none;
+    border-style: none;
+    transition: all 0.3s ease-in-out;
+}
+.btnn:hover{
+    background-color: rgb(116, 155, 180);
+    color: #eef4f5;
+}
+.btnn:focus{
+    outline: none;
+}
+.chat{
+    background-color: #eef4f5;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    overflow-y: scroll;
+}
+.lef{
+    display: flex;
+    justify-content: start;
+    width: 100%;
+}
+.rig{
+    display: flex;
+    justify-content: end;
+    width: 100%;
+}
+
+.bubble{
+    width: 47%;
+    height: max-content;
+    background-color: rgb(255, 255, 255);
+    padding: 4px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+}
+.msg{
+    font-style: italic;
+}
+.name{
+    font-size: x-small;
+    font-weight: 700;
+    text-decoration: underline;
+}
+.date{
+    display: flex;
+    font-style: italic;
+    font-size: x-small;
+    justify-content: end;
+    padding-right: 3px;
+}
+.cht{
+    width: 60px;
+    height: 60px;
+    border-radius: 25%;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+{%load static%}
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="keywords"
+      content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Monsterlite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Monster admin lite design, Monster admin lite dashboard bootstrap 5 dashboard template"
+    />
+    <meta
+      name="description"
+      content="Monster Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework"
+    />
+    <meta name="robots" content="noindex,nofollow" />
+    <title></title>
+    <link
+      href="{%static 'assets/plugins/chartist/dist/chartist.min.css'%}"
+      rel="stylesheet"
+    />
+    <link href="{%static 'css/style.min.css'%}" rel="stylesheet" />
+    <link href="{%static 'css/main.css'%}" rel="stylesheet" />
+    <script src="{%static 'assets/plugins/jquery/dist/jquery.min.js'%}"></script>
+    <script src="{%static 'js/man.js'%}"></script>
+  </head>
+
+  <body>
+    <div class="preloader">
+      <div class="lds-ripple">
+        <div class="lds-pos"></div>
+        <div class="lds-pos"></div>
+      </div>
+    </div>
+    <div
+      id="main-wrapper"
+      data-layout="vertical"
+      data-navbarbg="skin6"
+      data-sidebartype="full"
+      data-sidebar-position="absolute"
+      data-header-position="absolute"
+      data-boxed-layout="full"
+    >
+      <header style="background-color: #cacaca" class="topbar">
+        <nav class="navbar top-navbar navbar-expand-md">
+          <div class="navbar-header" data-logobg="skin6">
+            <a class="navbar-brand" href="#">
+              <b class="logo-icon">
+                {% comment %}
+                <i style="font-size: 30px" class="fas fa-building"></i>
+                {%endcomment %}
+                <span style="width: 100%; font-weight: bold"
+                  >{{request.session.data.hall_name}}</span
+                >
+              </b>
+            </a>
+            <a
+              class="
+                nav-toggler
+                waves-effect waves-light
+                text-dark
+                d-block d-md-none
+              "
+              href="javascript:void(0)"
+              ><i class="ti-menu ti-close"></i
+            ></a>
+          </div>
+          <div
+            class="navbar-collapse collapse"
+            id="navbarSupportedContent"
+            data-navbarbg="skin5"
+          >
+            <ul class="navbar-nav me-auto mt-md-0">
+              <li class="nav-item hidden-sm-down"></li>
+            </ul>
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle waves-effect waves-dark"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i style="font-size: 20px" class="fas fa-user"></i>
+                  {{request.session.data.lname}} {{request.session.data.fname}}
+                </a>
+                <ul
+                  class="dropdown-menu show"
+                  aria-labelledby="navbarDropdown"
+                ></ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <aside class="left-sidebar" data-sidebarbg="skin6">
+        <!-- Sidebar scroll-->
+        <div class="scroll-sidebar">
+          <!-- Sidebar navigation-->
+          <nav class="sidebar-nav">
+            <ul id="sidebarnav">
+              <!-- User Profile-->
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link waves-effect waves-dark sidebar-link"
+                  href="#"
+                  aria-expanded="false"
+                >
+                  <i class="me-3 fas fa-clock" aria-hidden="true"></i
+                  ><span class="hide-menu">Dashboard</span></a
+                >
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link waves-effect waves-dark sidebar-link"
+                  href="/adm/profile"
+                  aria-expanded="false"
+                  ><i class="me-3 fa fa-user" aria-hidden="true"></i
+                  ><span class="hide-menu">Profile</span></a
+                >
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link waves-effect waves-dark sidebar-link"
+                  href="/adm/student"
+                  aria-expanded="false"
+                  ><i class="me-3 fas fa-hands-helping" aria-hidden="true"></i
+                  ><span class="hide-menu">Approval</span></a
+                >
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link waves-effect waves-dark sidebar-link"
+                  href="/adm/al_student"
+                  aria-expanded="false"
+                  ><i class="me-3 fas fa-child" aria-hidden="true"></i
+                  ><span class="hide-menu">Students</span></a
+                >
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link waves-effect waves-dark sidebar-link"
+                  href="/api/adm_logout"
+                  aria-expanded="false"
+                  ><i class="me-3 fas fa-power-off" aria-hidden="true"></i
+                  ><span class="hide-menu">Log Out</span></a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+      <div class="page-wrapper">
+        <div class="page-breadcrumb">
+          <div class="row align-items-center">
+            <div class="col-md-6 col-8 align-self-center">
+              <h3 class="page-title mb-0 p-0">Dashboard</h3>
+              <div class="d-flex align-items-center">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                      Dashboard
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="row">
+            <!-- Column -->
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Hall Population</h4>
+                  <div class="text-end">
+                    <h2 class="font-light mb-0">
+                      <i style="color: #55ce63" class="fas fa-chart-bar"></i>
+                      {{request.session.data.num_in_hall}}/{{request.session.data.hall_number}}
+                    </h2>
+                    <span class="text-muted">Status</span>
+                  </div>
+                  <span class="text-success"
+                    >{{request.session.data.num_per}}%</span
+                  >
+                  <div class="progress">
+                    <div
+                      class="progress-bar bg-success"
+                      role="progressbar"
+                      style="width: {{request.session.data.num_per}}%; height: 6px"
+                      aria-valuenow="25"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% comment %}
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Rooms Available</h4>
+                  <div class="text-end">
+                    <h2 class="font-light mb-0">
+                      <i style="color: blue" class="fas fa-chart-bar"></i>
+                      {{request.session.data.rem_room_num}}/{{request.session.data.num_room}}
+                      {% if request.session.data.rem_rem_room_num != 0 %}
+                      <span style="font-size: 15px"
+                        >+ {{request.session.data.rem_rem_room_num}}
+                        student(s)</span
+                      >
+                      {%endif%}
+                    </h2>
+                    <span class="text-muted">Status</span>
+                  </div>
+                  <span style="color: blue"
+                    >{{request.session.data.rem_room_num_per}}%</span
+                  >
+                  <div class="progress">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      style="width: {{request.session.data.rem_room_num_per}}%; height: 6px; background-color:blue;"
+                      aria-valuenow="25"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endcomment %}
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Pending Approval</h4>
+                  <div class="text-end">
+                    <h2 class="font-light mb-0">
+                      <i style="color: #ffc800" class="fas fa-user-plus"></i>
+                      {{request.session.data.num_pend}}
+                    </h2>
+                    <span class="text-muted">Status</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Column -->
+          </div>
+          <a href="#msg"><center><div class="cht">Chat<br/>&#8595</div></center></a>
+        </div>
+
+        <form id="msg" method="POST" action="http://127.0.0.1:8000/st/api/msgg1" class="contain" style="position: relative;"
+        >
+        <span class="chtsec">Chat Section</span>
+
+          {% csrf_token %}{% if error %}
+          <div
+            style="position: absolute; top: 0px;"
+            class="alert alert-warning alert-dismissible fade show"
+            role="alert"
+          >
+            <strong>Warning!</strong> Type Something
+          </div>
+          {% endif %}
+          <input type="number" name="sender_id" class="btnn" value={{request.session.data.id}} hidden/>
+          <input type="text" name="sender_name" class="btnn" value={{request.session.data.fname}} hidden/>
+          <input type="text" name="hallid" class="btnn" value={{request.session.data.hallID}} hidden/>
+          <input type="text" name="date" class="date" hidden/>
+          <div class="chat">
+            {% for msgs in request.session.messages1.msg %}
+            {% if request.session.data.hallID == msgs.4 %}
+              {% if msgs.0 != request.session.data.id %}
+                <div class="lef">
+                  <div class="bubble">
+                    <div class="name">{{msgs.1}}:</div>
+                    <div class="msg"> {{msgs.2}}</div>
+                    <div class="date"><div>{{msgs.3}}</div></div>
+                  </div>
+                </div>
+              {% else %}
+                <div class="rig">
+                  <div class="bubble">
+                    <div class="name">You:</div>
+                    <div class="msg">{{msgs.2}}</div>
+                    <div class="date"><div>{{msgs.3}}</div></div>
+                  </div>
+                </div>
+              {% endif %}            
+            {% endif %}
+            {% endfor %}
+
+          </div>
+          <div class="bx">
+            <input class="inpp" name="message" placeholder="Say Something!"/>
+            <input type="submit" class="btnn" value="send" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="{%static 'assets/plugins/bootstrap/dist/js/bootstrap.bundle.min.js'%}"></script>
+    <script src="{%static 'js/app-style-switcher.js'%}"></script>
+    <!--Wave Effects -->
+    <script src="{%static 'js/waves.js'%}"></script>
+    <!--Menu sidebar -->
+    <script src="{%static 'js/sidebarmenu.js'%}"></script>
+    <!--Custom JavaScript -->
+    <script src="{%static 'js/custom.js'%}"></script>
+    <!--This page JavaScript -->
+    <!--flot chart-->
+    <script src="{%static 'assets/plugins/flot/jquery.flot.js'%}"></script>
+    <script src="{%static 'assets/plugins/flot.tooltip/js/jquery.flot.tooltip.min.js'%}"></script>
+    <script src="{%static 'js/pages/dashboards/dashboard1.js'%}"></script>
+  </body>
+</html>

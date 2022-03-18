@@ -1,0 +1,113 @@
+<head>
+<style>
+    @page {
+        size: a4 portrait;
+        @frame header_frame {           /* Static Frame */
+            -pdf-frame-content: header_content;
+            left: 50pt; width: 512pt; top: 50pt; height: 40pt;
+        }
+        @frame content_frame {          /* Content Frame */
+            left: 50pt; width: 512pt; top: 90pt; height: 632pt;
+        }
+        @frame footer_frame {           /* Another static Frame */
+            -pdf-frame-content: footer_content;
+            left: 50pt; width: 512pt; top: 772pt; height: 20pt;
+        }
+    }
+    th{
+        font-size: 18px;
+        font-weight:bold;
+        text-align: left;
+    }
+    td{
+        font-size: 15px;
+    }
+    tr{
+        margin-bottom: 20px;
+    }
+    p{
+        font-size: 30px;
+    }
+</style>
+</head>
+
+<body>
+    <!-- Content for Static Frame 'header_frame' -->
+    <p>Babcock University Hall Information</p>
+
+    <!-- Content for Static Frame 'footer_frame' -->
+    {% comment %} <div id="footer_content">(c) - page <pdf:pagenumber>
+        of <pdf:pagecount>
+    </div> {% endcomment %}
+
+    <!-- HTML Content -->
+    <hr>
+    <table>
+    		<tr>
+    			<th>Name:</th>
+    			<td>{{lname}} {{fname}}</td>
+    		</tr>
+    		<tr>
+    			<th>Hall Name:</th>
+    			<td>{{hall_name}}</td>
+    		</tr>
+    		<tr>
+    			<th>Gender: </th>
+    			<td>{{gender}}</td>
+    		</tr>
+            <tr>
+    			<th>Matric Number:</th>
+    			<td>{{matric}}</td>
+    		</tr>
+            <tr>
+    			<th>Room Number:</th>
+    			<td>{{room_no}}</td>
+    		</tr>
+            <tr>
+    			<th>Approval Status:</th>
+    			<td>{{appr}}</td>
+    		</tr>
+            <tr>
+    			<th>Email</th>
+    			<td>{{mail}}</td>
+    		</tr>
+    </table>
+
+    <hr>
+
+    {% comment %} <table>
+    	<tr>
+ 
+    		<th>Product</th>
+    		<th>Price</th>
+    		<th>Quantity</th>
+    		<th>Total</th>
+    	</tr>
+    	<tr>
+ 
+    		<td>Hosting Plan</td>
+    		<td>$7.99</td>
+    		<td>2</td>
+    		<td>$15.98</td>
+    	</tr>
+    	<tr>
+ 
+    		<td>consultation </td>
+    		<td>$225</td>
+    		<td>1</td>
+    		<td>$225</td>
+    	</tr>
+    	<tr>
+ 
+    		<td>Service Hours</td>
+    		<td>$189</td>
+    		<td>45.7</td>
+    		<td>$8637.30</td>
+    	</tr>
+    </table>
+
+    <hr>
+
+    <p><strong>Total: $8878.28</strong></p> {% endcomment %}
+</body>
+</html>

@@ -45,3 +45,6 @@ class Messages(models.Model):
     sender_name = models.CharField(max_length=200)
     message = models.TextField(max_length=200)
     date = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.message

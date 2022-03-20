@@ -43,8 +43,6 @@ def msgg(request):
         date = request.POST["date"]
         hallid = request.POST["hallid"]
 
-        form = Messages(request.POST)
-
         if message != "":
             
             msg = list(Messages.objects.values_list('sender_id', 'sender_name', 'message', 'date', 'hallid'))

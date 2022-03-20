@@ -25,6 +25,7 @@ class Student(models.Model):
     pending = models.BooleanField(default=False)
     approved = models.BooleanField(default=False)
     password = models.TextField()
+    
     def __str__(self):
         return (self.fname + " " + self.lname + " " + self.matric)
         

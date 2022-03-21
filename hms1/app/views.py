@@ -23,7 +23,12 @@ def msgg1(request):
         date = request.POST["date"]
         hallid = request.POST["hallid"]
         if message != "":
+
+            obj = Messages.objects.create(hallid=hallid, sender_id=sender_id, sender_name=sender_name, message=message, date=date)
+
             msg = list(Messages.objects.values_list('sender_id', 'sender_name', 'message', 'date', 'hallid'))
+
+            obj.save()
             
             request.session['messages1'] = {"msg": msg}
           
@@ -43,10 +48,14 @@ def msgg(request):
         date = request.POST["date"]
         hallid = request.POST["hallid"]
 
+
         if message != "":
             
+            obj = Messages.objects.create(hallid=hallid, sender_id=sender_id, sender_name=sender_name, message=message, date=date)
+
             msg = list(Messages.objects.values_list('sender_id', 'sender_name', 'message', 'date', 'hallid'))
-          
+
+            obj.save()
             
             request.session['messages'] = {"msg": msg}
             return redirect(st_home)

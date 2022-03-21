@@ -25,7 +25,7 @@ class Student(models.Model):
     pending = models.BooleanField(default=False)
     approved = models.BooleanField(default=False)
     password = models.TextField()
-    
+
     def __str__(self):
         return (self.fname + " " + self.lname + " " + self.matric)
         
@@ -41,7 +41,7 @@ class Admin(models.Model):
         return self.fname
 
 class Messages(models.Model):
-    hallid = models.IntegerField(default=1, primary_key=True)
+    hallid = models.IntegerField(default=0)
     sender_id = models.IntegerField()
     sender_name = models.CharField(max_length=200)
     message = models.TextField(max_length=200)

@@ -1,2 +1,0 @@
-python
-Django==3.2

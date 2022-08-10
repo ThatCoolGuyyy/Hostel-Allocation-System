@@ -1,1 +1,1 @@
-web: gunicorn app:apps
+web: gunicorn hms1.wsgi

@@ -100,7 +100,6 @@ class DownloadPDF(View):
         response['Content-Disposition'] = content
         return response
 
-
 def adm_approve_st(request):
     import random
     if 'data' in request.session:

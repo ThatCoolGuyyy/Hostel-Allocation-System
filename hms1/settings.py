@@ -27,7 +27,7 @@ SECRET_KEY = ')y$vu#m&n!9axv4_q54y9@^=yx&5s@h&0te8if-hr1u(+d-o!w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["hostel-management-hms.herokuapp.com","127.0.0.1"]
+ALLOWED_HOSTS = ["hostel-management-hms.herokuapp.com","127.0.0.1", "*"]
 
 
 # Application definition
